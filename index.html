@@ -1,14 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-    <script type="module" src="/src/main.ts" defer></script>
-  </head>
-  <body>
+<html lang="fr" translate="no">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form</title>
+  <script type="module" src="/src/main.ts" defer></script>
+</head>
+<body>
+  <div class="frameRequired">
+    <div class="required">*obligatoire</div>
+    <div class="introduction">Rejoins l'aventure et gagne en visiblité !</div>
+    <form class="formRequired" spellcheck="false" autocomplete="off" required>
+      <div class="div1">
+        <label for="name" class="firstNameL">Nom*</label>
+        <input type="text" id="name" placeholder="Dupont" pattern="[a-zA-ZÀ-ÿ]{1,}" required>
+        <span>Uniquement des lettres</span>
+      </div>
 
+      <div class="div2">
+        <label for="secondName" class="lastNameL">Prenom*</label>
+        <input type="text" id="secondName" placeholder="Marc" pattern="[a-zA-ZÀ-ÿ]{1,}" required>
+        <span>Uniquement des lettres</span>
+      </div>
 
-  </body>
+      <div class="div3">
+        <label for="email" class="emailL">Email*</label>
+        <input type="text" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="abc@abc.fr" required>
+        <span>Format : exemple@exemple.exemple</span>
+      </div>
+
+      <div class="div4">
+        <label for="phone" class="phoneL">Téléphone*</label>
+        <input type="text" id="phone" pattern="[0-9]{10,}" placeholder="0612345678" required>
+        <span>10 chiffres, tous attachés</span>
+      </div>
+
+      <div class="div5">
+        <label for="password" class="passwordL">Mot de passe*</label>
+        <input type="password" id="password" placeholder="8 caractères" minlength="8" required>
+        <span>Minimum 8 caractères</span>
+      </div>
+
+      <button class="create" type="submit">Crée ton compte</button>
+    </form>
+    <div class="logIn">Vous avez déjà un compte ? <span>Connectez-vous</span></div>
+  </div>
+
+    <div class="frameOptional">
+      <div style="font-size:10px;color:white;margin-bottom: 0.5rem;margin-top: 3%;">*non-obligatoire</div>
+      <form  class="formOptional">
+
+        <div class="question1" style="left:0px">
+          <div class="textChoice1">Café ou thé ?</div>
+          <div class="test">
+            
+            <div class="position">
+              <div class="cache">
+                <img src="cafe-chaud.png" alt="">
+                <img src="verifie2.png" class="okLeft" alt="">
+              </div>
+              <input type="radio" class="left" name="coffeeOrTea">
+            </div>
+
+            <div class="position2">
+              <div class="cache2">
+                <img src="the.png" alt="">
+                <img src="verifie2.png" class="okRight" alt="">
+              </div>
+              <input type="radio" class="right" name="coffeeOrTea">
+            </div>
+          
+          </div>
+        </div>
+
+        <div class="question2" style="left:0px">
+          <div class="textChoice1">Café ou thé ?</div>
+          <div class="test">
+            
+            <div class="position">
+              <div class="cachea">
+                <img src="montagnes.png" alt="">
+                <img src="verifie2.png" class="okLefta" alt="">
+              </div>
+              <input type="radio" class="lefta" name="coffeeOrTea">
+            </div>
+
+            <div class="position2">
+              <div class="cache2a">
+                <img src="plage.png" alt="">
+                <img src="verifie2.png" class="okRighta" alt="">
+              </div>
+              <input type="radio" class="righta" name="coffeeOrTea">
+            </div>
+          
+          </div>
+        </div>
+
+      </form>
+    </div>
+</body>
 </html>
