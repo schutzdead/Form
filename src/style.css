@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root{
+    --borderCenterBox: 1px #f6f6f9 solid
+}
+
 body{
     position :absolute;
     top : 0;
@@ -120,14 +124,14 @@ body{
 
 .frameOptional{
     position:relative;
-    border : 2px pink solid;
     width: 50%;
     height: 700px;
     color: black;
 }
 
-.question1, .question2{
-    position: relative;
+.formOptional>div{
+    position: absolute;
+    z-index: 1;
     border-radius: 10px;
     background-color: white;
     width: 35%;
@@ -135,6 +139,7 @@ body{
 }
 
 .textChoice1{
+    position: relative;
     background-color: #364bcc;
     border-radius: 10px 10px 0 0;
     height: 30px;
@@ -143,6 +148,7 @@ body{
     justify-content: center;
     color: white;
     font-weight: 600;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
 }
 
 .test{
@@ -151,13 +157,13 @@ body{
     justify-content: center;
 }
 
-.position, .cache, .cachea{
-    border-right: 1px #f6f6f9 solid;
+.position, .position>div{
+    border-right: var(--borderCenterBox);
     border-radius: 0 0 0 10px;
 }
 
-.position2, .cache2, .cache2a{
-    border-left: 1px #f6f6f9 solid;
+.position2,.position2>div{
+    border-left: var(--borderCenterBox);
     border-radius: 0 0 10px 0;
 }
 
@@ -170,7 +176,7 @@ body{
     height: 50px;
 }
 
-.cache, .cache2, .cachea, .cache2a{
+.position>div, .position2>div{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -191,7 +197,7 @@ body{
     }
 }
 
-.cache2 img:nth-child(2),.cache img:nth-child(2), .cache2a img:nth-child(2),.cachea img:nth-child(2){
+.position>div>img:nth-child(2),.position2>div>img:nth-child(2){
     display: none;
     position:relative;
     left :3vw;
@@ -202,7 +208,7 @@ body{
 .frameOptional img{
     margin-top: 0.2rem;
     height: auto;
-    width: 2.2rem;
+    width: clamp(1.8rem,2.5vw,2.2rem);
     position: absolute;
     user-select: none;
 }
